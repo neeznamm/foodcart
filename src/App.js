@@ -1,32 +1,24 @@
-<<<<<<< Updated upstream
-import './App.css';
-import Dashboard from "./DashboardTemplate/Dashboard";
-
-function App() {
-  return (
-    <div className="App">
-      <Dashboard/>
-    </div>
-=======
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import MenuPage from './Menu/MenuPage';
-import HomePage from './Home/HomePage';
+import Dashboard from './DashboardTemplate/Dashboard';
 import AboutPage from './Contact/AboutPage';
-import ContactPage from './Contact/ContactPage';
-
+import ContactPage from './Contact/ContactPage.jsx';
+import Orders from './Menu/Orders';
+import ErrorPage from './ErrorPage';
 
 function App() {
   return (
     <Router className="App">
       <Routes>
-        <Route path='/' element={<HomePage />}/>
+        <Route path='/' element={<Dashboard />}/>
         <Route path='/menu' element={<MenuPage />}/>
         <Route path='/about' element={<AboutPage />}/>
         <Route path='/contact' element={<ContactPage />}/>
+        <Route path='/orders' element={<Orders />}/>
+        <Route path='/*' element={<ErrorPage />}/>
       </Routes>
     </Router>
->>>>>>> Stashed changes
   );
 }
 

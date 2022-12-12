@@ -5,6 +5,7 @@ import ListItemText from '@mui/material/ListItemText';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
+import { Link } from 'react-router-dom';
 
 export const mainListItems = (
   <React.Fragment>
@@ -12,19 +13,25 @@ export const mainListItems = (
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Home" />
+     <Link to={'/'}>
+       <ListItemText primary="Home" />
+     </Link>
     </ListItemButton>
-      <ListItemButton>
+      <ListItemButton >
           <ListItemIcon>
               <FastfoodIcon/>
           </ListItemIcon>
-          <ListItemText primary="Menu" />
+          <Link to={'/menu'}>
+            <ListItemText primary="Menu" />
+          </Link>
       </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
-      <ListItemText primary="My Cart" />
+        <Link to={'/orders'}>
+          <ListItemText primary="My Cart" />
+        </Link>
     </ListItemButton>
   </React.Fragment>
 );
