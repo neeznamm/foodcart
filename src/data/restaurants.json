@@ -1,0 +1,92 @@
+{
+  "13": {
+    "id": 14,
+    "name": "Panera (521 Fieldstown Road)",
+    "score": 4.6,
+    "tags": "Breakfast and Brunch, salad, Sandwich, Family Meals, Pizza, Healthy, American, Chicken",
+    "price_range": "$",
+    "full_address": "521 Fieldstown Road, Gardendale, AL, 35071",
+    "zip_code": "35071"
+  },
+  "19": {
+    "id": 20,
+    "name": "MrBeast Burger (838 Odum Road)",
+    "score": 3.7,
+    "tags": "American, Burgers, Sandwich",
+    "price_range": "$$",
+    "full_address": "838 Odum Road, Gardendale, AL, 35071",
+    "zip_code": "35071"
+  },
+  "26": {
+    "id": 27,
+    "name": "Ruscelli's Food Truck at Mojo Pub",
+    "score": 4.7,
+    "tags": "Italian, Exclusive to Eats",
+    "price_range": "$",
+    "full_address": "2801 7th Ave S, Birmingham, AL, 35233",
+    "zip_code": "35233"
+  },
+  "34": {
+    "id": 35,
+    "name": "Starbucks (Hwy 11 and Avenue W)",
+    "score": 4.6,
+    "tags": "Bakery, Breakfast and Brunch, Cafe, Coffee &amp; Tea",
+    "price_range": "$",
+    "full_address": "2401 Crossplex Boulevard 101, Birmingham, AL, 35208",
+    "zip_code": "35208"
+  },
+  "35": {
+    "id": 36,
+    "name": "Moe's Southwest Grill (655 Fieldstown Road, Suite #158)",
+    "score": 4.8,
+    "tags": "Mexican, Fast Food, Salads, Healthy",
+    "price_range": "$",
+    "full_address": "655 Fieldstown Road, Gardendale, AL, 35071",
+    "zip_code": "35071"
+  },
+  "36": {
+    "id": 37,
+    "name": "La Tia Paisa Taco Shop",
+    "score": 4.3,
+    "tags": "Mexican, Breakfast and Brunch, Burritos",
+    "price_range": "$$",
+    "full_address": "406 W Valley Ave, Homewood, AL, 35209",
+    "zip_code": "35209"
+  },
+  "37": {
+    "id": 38,
+    "name": "CHOP N FRESH",
+    "score": 4.8,
+    "tags": "Salads, Vegetarian, Bowls",
+    "price_range": "$",
+    "full_address": "291 Rele Street, Mountain Brook, AL, 35223",
+    "zip_code": "35223"
+  },
+  "39": {
+    "id": 40,
+    "name": "Cicis (808 Greensprings Highway Suite 132)",
+    "score": 4.4,
+    "tags": "pizza",
+    "price_range": "$",
+    "full_address": "808 Green Springs Highway, Homewood, AL, 35209",
+    "zip_code": "35209"
+  },
+  "40": {
+    "id": 41,
+    "name": "McAlister's Deli  (1801 4th Avenue South)",
+    "score": 4.7,
+    "tags": "Sandwich, Salads, Healthy, Family Meals",
+    "price_range": "$",
+    "full_address": "1801 4th Ave S, Birmingham, AL, 35233",
+    "zip_code": "35233"
+  },
+  "41": {
+    "id": 42,
+    "name": "Firehouse Subs (3477  Lowery Parkway, Suite 115)",
+    "score": 4.7,
+    "tags": "Sandwich, Deli",
+    "price_range": "$",
+    "full_address": "3477  Lowery Parkway, Suite 115, Fultondale, AL, 35068",
+    "zip_code": "35068"
+  }
+}
