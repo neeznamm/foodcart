@@ -8,9 +8,6 @@ const MenuPage = () => {
   return (
     <>
     <Grid>
-      <Dashboard/>
-    </Grid>
-    <Grid>
       <CardComponent/>
     </Grid>
   </>

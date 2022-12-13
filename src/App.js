@@ -1,26 +1,20 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import MenuPage from './Menu/MenuPage';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import Dashboard from './DashboardTemplate/Dashboard';
-import AboutPage from './Contact/AboutPage';
-import ContactPage from './Contact/ContactPage.jsx';
+import MenuPage from './Menu/MenuPage';
 import OrdersPage from './Menu/OrdersPage';
-import ErrorPage from './ErrorPage';
+import AboutPage from './Contact/AboutPage';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Dashboard />
-        <Routes>
-          <Route path='/menu' element={<MenuPage />}/>
-          <Route path='/about' element={<AboutPage />}/>
-          <Route path='/contact' element={<ContactPage />}/>
-          <Route path='/orders' element={<OrdersPage />}/>
-          <Route path='/*' element={<ErrorPage />}/>
-        </Routes>
-      </Router>
-      </div>
+    <div className='app-container'>
+      <Routes>
+            <Route path="/" element={<Dashboard />}>
+            <Route path="/menu" element={<MenuPage/>} />
+            <Route path="/orders" element={<OrdersPage/>} />
+            <Route path="/about" element={<AboutPage/>} />
+          </Route>
+      </Routes>
+    </div>
   );
 }
 

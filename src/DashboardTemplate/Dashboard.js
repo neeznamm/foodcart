@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react'
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -13,7 +13,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { mainListItems } from './listItems';
 
-// eslint-disable-next-line no-unused-vars
+import { Outlet } from 'react-router-dom';
+
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -62,14 +63,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
+const Dashboard = () => {
+
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
+
   return (
-    <ThemeProvider theme={mdTheme}>
+    <div>
+      <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
@@ -128,12 +132,12 @@ function DashboardContent() {
           }}
         >
           <Toolbar />
+          <Outlet />
         </Box>
       </Box>
     </ThemeProvider>
+    </div>
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
-}
+export default Dashboard
