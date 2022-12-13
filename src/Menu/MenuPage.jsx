@@ -1,8 +1,19 @@
 import React from 'react'
+import { Grid, Typography } from "@mui/material";
+import CardComponent from '../components/CardComponent'
+import Dashboard from 'src/DashboardTemplate/Dashboard';
+import Items from '../DashboardTemplate/listItems';
 
-function MenuPage() {
+const MenuPage = () => {
   return (
-    <div>MenuPage</div>
+    <>
+    <Grid>
+      <Dashboard/>
+    </Grid>
+    <Grid>
+      <CardComponent/>
+    </Grid>
+  </>
   )
 }
 
