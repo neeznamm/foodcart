@@ -4,7 +4,7 @@ import MenuPage from './Menu/MenuPage';
 import Dashboard from './DashboardTemplate/Dashboard';
 import AboutPage from './Contact/AboutPage';
 import ContactPage from './Contact/ContactPage.jsx';
-import Orders from './Orders/Orders';
+import OrdersPage from './Menu/OrdersPage';
 import ErrorPage from './ErrorPage';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           <Route path='/menu' element={<MenuPage />}/>
           <Route path='/about' element={<AboutPage />}/>
           <Route path='/contact' element={<ContactPage />}/>
-          <Route path='/orders' element={<Orders />}/>
+          <Route path='/orders' element={<OrdersPage />}/>
           <Route path='/*' element={<ErrorPage />}/>
         </Routes>
       </Router>
