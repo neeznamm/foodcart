@@ -38,7 +38,7 @@ function OrdersPage() {
   const [data, setData] = useState([])
 
 
-  if (data.length 1= 0) {
+  if (data.length != 0) {
     return (
       <>
         <Collapse in={message}>
