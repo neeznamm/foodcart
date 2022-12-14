@@ -51,7 +51,7 @@ const RecipeReviewCard = ({
         <Typography>{price}</Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <Grid xs={4}>
+        <Grid item xs={4}>
           <IconButton aria-label="add to cart">
             <FavoriteIcon />
           </IconButton>

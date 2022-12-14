@@ -64,6 +64,7 @@ const Menu = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setProductsLoading(true);
       if (!pageIdxsFetched.includes(currentPage)) {
         const resp = await axios.get(
           `http://localhost:3001/products?_start=${
@@ -72,7 +73,7 @@ const Menu = () => {
         );
         //console.log("vrakja", resp)
         setProducts(resp.data);
-        setProductsLoading(true);
+        setProductsLoading(false);
         pagesFetched.push(resp.data);
         pageIdxsFetched.push(currentPage);
       } else {
@@ -83,13 +84,13 @@ const Menu = () => {
   }, [currentPage]);
 
   return (
-    <Grid container spacing={3} sx={{ p: 2 }}>
+    <Grid container spacing={3} >
       {productsLoading ? (
         <div>Loading...</div>
       ) : (
         products.map(
-          ({ name, description, price, category }) => (
-            <Grid item>
+          ({ name, description, price, category, index }) => (
+            <Grid item key={index}>
               <CardComponent
                 name={name}
                 description={description}
