@@ -3,7 +3,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Offers from './Pages/Offers';
 import Cart from './Pages/Cart';
 import About from './Pages/About';
-import Menu from './Pages/Menu'
+import Menu from './Pages/Menu';
 
 function App() {
   return (
