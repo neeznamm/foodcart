@@ -9,29 +9,29 @@ import { Link } from 'react-router-dom';
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-     <Link to={'/'}>
-       <ListItemText primary="Home" />
-     </Link>
-    </ListItemButton>
+      <Link to={'/'}>
+          <ListItemButton >
+              <ListItemIcon>
+                  <DashboardIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Home" />
+          </ListItemButton>
+      </Link>
+      <Link to={'/offers'}>
       <ListItemButton >
           <ListItemIcon>
               <FastfoodIcon/>
           </ListItemIcon>
-          <Link to={'/menu'}>
-            <ListItemText primary="Menu" />
-          </Link>
+          <ListItemText primary="Offers" />
       </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-        <Link to={'/orders'}>
-          <ListItemText primary="My Cart" />
-        </Link>
-    </ListItemButton>
+      </Link>
+      <Link to={'/cart'}>
+          <ListItemButton >
+              <ListItemIcon>
+                  <ShoppingCartIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Cart" />
+          </ListItemButton>
+      </Link>
   </React.Fragment>
 );

@@ -1,8 +1,12 @@
 # foodcart
 ### DIGIT Workshop Project
 
-MUI dependencies needed: 
-`@mui/material, @mui/icons-material, @emotion/styled, @emotion/react`
+Dependencies:
+`@mui/material, @mui/icons-material, @emotion/styled, @emotion/react, 
+react-router-dom, json-server, axios`
 
-React Router Dom
-`npm i react-router-dom`
+
+Start JSON Server from directory main directory (`foodcart/`):
+```
+(npx) json-server --watch ./src/data/db.json --port 3001
+```

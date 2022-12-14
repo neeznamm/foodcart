@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { styled } from "@mui/material/styles";
 import {
   Card,
@@ -7,12 +7,9 @@ import {
   CardHeader,
   Grid,
 } from "@mui/material";
-import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import pizzaPhoto from "../images/pizza_peppers.png";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
-  Button,
   Typography,
   IconButton,
   Collapse,
@@ -21,7 +18,7 @@ import {
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
-  return <IconButton {...other} />;
+  return <IconButton />;
 })(({ theme, expand }) => ({
   transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
   marginLeft: "auto",
