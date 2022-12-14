@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import React, { useEffect, useState, useNavigate } from "react";
 import { Grid } from "@mui/material";
-import CardComponent from "../Components/CardComponent";
+import CardComponent from '../components/CardComponent'
 import { MEALS } from "src/data/meals";
 import axios from "axios";
 
