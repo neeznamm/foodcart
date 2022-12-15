@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext} from 'react'
 import OrderForm from '../components/OrderForm'
 import Orderlist from 'src/components/OrderList'
 import Grid from '@mui/material/Grid';
@@ -16,6 +16,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import EmptyCard from 'src/components/Dashboard/EmptyCard';
+import CartContext from 'src/context/CartContext';
 
 function OrdersPage() {
 
@@ -34,11 +35,11 @@ function OrdersPage() {
     setOpen(false)
     setMessage(true)
   }
+  
+  const data = useContext(CartContext)
 
-  const [data, setData] = useState([])
 
-
-  if (data.length != 0) {
+  if (data.length !== 0) {
     return (
       <>
         <Collapse in={message}>
@@ -64,7 +65,7 @@ function OrdersPage() {
           marginTop: "5rem"
         }}>
           <Grid xs={1} />
-          <Orderlist />
+          <Orderlist data={data}/>
           <Grid xs={2} />
           <OrderForm handleOpen={handleClickOpen} />
           <Grid xs={1} />

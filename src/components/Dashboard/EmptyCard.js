@@ -1,11 +1,15 @@
 import React from 'react'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import {HiShoppingCart} from 'react-icons/hi'
+
+const style = {
+  fontSize: "3rem"
+}
 
 export default function EmptyCard() {
   return (
-    <div>
-        <h1>Empty Card</h1>
-        <ShoppingCartIcon fontSize='large'/>
+    <div className='empty-card-container'>
+        <h1 className='empty-card-title'>Empty Card</h1>
+        <HiShoppingCart size={120}/>
     </div>
   )
 }

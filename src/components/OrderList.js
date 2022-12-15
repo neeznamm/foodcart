@@ -28,9 +28,10 @@ const Demo = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
 }));
 
-export default function Orderlist() {
+export default function Orderlist({data}) {
   const [dense, setDense] = React.useState(false);
   const [secondary, setSecondary] = React.useState(false);
+  console.log(data)
 
   return (
         <Grid xs={4}>
