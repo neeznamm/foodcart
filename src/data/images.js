@@ -59,8 +59,8 @@ const CATEGORY_IMAGES = {
 
 export const getRandomCategoryImg = (category) => {
     const images = CATEGORY_IMAGES[category];
-    console.log("DEBUG: images", images);
+    // console.log("DEBUG: images", images);
     if (!images || !images.length) return null;
-    console.log("DEBUG: returning", images[Math.floor(Math.random() * images.length)]);
+    // console.log("DEBUG: returning", images[Math.floor(Math.random() * images.length)]);
     return images[Math.floor(Math.random() * images.length)];
   };

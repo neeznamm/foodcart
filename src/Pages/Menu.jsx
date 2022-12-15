@@ -7,7 +7,7 @@ import axios from "axios";
 import { getRandomCategoryImg } from "src/data/images";
 
 const Menu = () => {
-  //const location = useLocation();
+  const location = useLocation();
   const [products, setProducts] = useState([]);
   const [productsFiltered, setProductsFiltered] = useState([]);
   const [productsLoading, setProductsLoading] = useState(false);
@@ -16,13 +16,13 @@ const Menu = () => {
   const [pagesFetched, setPagesFetched] = useState([]);
   const [pageIdxsFetched, setPageIdxsFetched] = useState([]);
   //const navigate = useNavigate();
-
+ console.log ("lokacija", location)
   useEffect(() => {
     const fetchProducts = async () => {
       setProductsLoading(true);
       if (!pageIdxsFetched.includes(currentPage)) {
         const resp = await axios.get(
-          `http://localhost:3001/products?_start=${
+          `http://localhost:3001/products?restaurant_id=${location.state.id}&&_start=${
             (currentPage - 1) * 9
           }&_end=${currentPage * 9}`
         );
