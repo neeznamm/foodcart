@@ -11,6 +11,9 @@ import {customTheme} from "../shared/Theme";
 import {ThemeProvider} from "@mui/material/styles";
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import {ArrowBack, ArrowForward} from "@mui/icons-material";
+import CardMedia from "@mui/material/CardMedia";
+import foodImages from '../shared/ImageGetter.js'
+import Box from "@mui/material/Box";
 
 const Offers = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -28,9 +31,8 @@ const Offers = () => {
         setLoadedRestaurants(true);
         pagesFetched.push(resp.data)
         pageIdxsFetched.push(currentPage);
-      } else {
-        setRestaurants(pagesFetched[currentPage]);
-      }
+      } else setRestaurants(pagesFetched[currentPage])
+
     }
     fetchRestaurants();
   },[currentPage])
@@ -38,31 +40,36 @@ const Offers = () => {
   const renderDollarIcon = (count) => {
     const dollarSignsArray = []
     for (let i=0;i<count;++i)
-      dollarSignsArray.push(<MonetizationOnIcon key={i} sx={{opacity:"0.6", color:'gold'}}/>)
+      dollarSignsArray.push(<MonetizationOnIcon key={i} sx={{opacity:"0.7", color:'darkgreen'}}/>)
     return dollarSignsArray;
   }
 
-  return loadedRestaurants ?
+  return restaurants ?
       (<ThemeProvider theme={customTheme}>
         <div style={{margin:"15px 60px 60px 60px"}}>
-        <Typography variant="h2" sx={{mb:3}}>
-          Choose a restaurant</Typography>
-        <Pagination color="primary" variant="outlined" count={10} page={currentPage} onChange={(event,page)=>setCurrentPage(page)}
-        sx={{mb:5}} slots={{ previous: <ArrowBack/>, next: <ArrowForward/> }}/>
+        <Typography variant="h4" sx={{mb:3}}>
+          Choose a <b>restaurant</b> to order from</Typography>
 
-    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+    <Grid container spacing={{ xs: 2, md: 5 }} columns={{ xs: 4, sm: 8, md: 12 }}>
     {restaurants.map((r) => {
       const tags = r.tags.split(",");
       return(
-          <Grid item xs={2} sm={4} md={4} key={r.index}>
-      <Card variant="outlined" sx={{boxShadow:'5px 5px 15px #8888', maxHeight:"260px", height:"100%", position:"relative"}}>
+          <Grid item xs={2} sm={3} md={3} key={r.index}>
+          <Card variant="outlined" sx={{boxShadow:'5px 5px 15px #8888', backgroundImage:`linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+          url(${foodImages[(r.tags.length+r.name.length)%17]})`,
+            maxHeight:"260px", height:"100%", position:"relative",':hover': {
+              boxShadow: 20, // theme.shadows[20]
+            }}}>
         <CardContent>
-          {renderDollarIcon (r.price_range.length)}
-          <Typography variant="h5" component="div" sx={{mb:1}}>
+          {/*{renderDollarIcon (r.price_range.length)}*/}
+          <Box component="div" sx={{ p: 1, backgroundColor:"rgba(255,255,255,0.85)", height:"fit-content", width:"fit-content", mb:2, borderRadius:"8px" }}>
+          <Typography variant="h5" component="div">
             {r.name}
           </Typography>
+          </Box>
           <div style={{height:"130px", float:"left"}}>
-            {tags.slice(0,6).map(t => <Chip component="span" key={t} label={t} sx={{m: 0.3}} variant="outlined" color={t.length % 2 === 0 ? "primary" : "success"}/>)}
+            {tags.slice(0,6).map(t => <Chip component="span" key={t} label={t} sx={{m: 0.3, opacity:"0.9", fontStyle:"italic"}} color={t.length % 2 === 0 ? "primary" :
+                t.length % 13 == 0 ? "warning" : "success"}/>)}
           </div>
         </CardContent>
         {/*<CardActions>*/}
@@ -72,14 +79,15 @@ const Offers = () => {
         {/*  }*/}
         {/*  >VIEW MENU</Button>*/}
         {/*</CardActions>*/}
-        <CardActions sx={{position:"absolute", bottom:"10px", right:"10px"}} >
-        <Typography component="legend">Rating:</Typography>
-          <Rating name="read-only" value={r.score} readOnly />
+        <CardActions sx={{position:"absolute", bottom:"10px", right:"10px", opacity:"0.9"}} >
+          <Button variant="contained" ><Rating name="read-only" value={r.score} readOnly /></Button>
         </CardActions>
       </Card>
           </Grid>)
     })}
-    </Grid>
+      <Pagination color="primary" count={10} page={currentPage} onChange={(event,page)=>setCurrentPage(page)}
+                  sx={{mt:18, ml:5}} slots={{ previous: <ArrowBack/>, next: <ArrowForward/> }}/>
+        </Grid>
         </div>
       </ThemeProvider>)
       : <CircularProgress />;

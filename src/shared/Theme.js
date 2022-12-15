@@ -15,7 +15,9 @@ export const customTheme = createTheme({
             '"Segoe UI Symbol"',
         ].join(','),
         h5: {
-            fontWeight:"bold"
+            fontWeight:"bold",
+            color:"black",
+            opacity:"0.8"
         }
     },
 });
