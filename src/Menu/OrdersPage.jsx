@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import OrderForm from '../components/OrderForm'
-import Orderlist from 'src/components/OrderList'
+import React, { useState, useContext } from 'react'
+import OrderForm from '../Components/OrderForm'
+import Orderlist from 'src/Components/OrderList'
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -8,7 +8,9 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import EmptyCard from 'src/components/Dashboard/EmptyCard';
+import EmptyCard from 'src/Components/Dashboard/EmptyCard';
+import CartContext from 'src/context/CartContext';
+
 
 function OrdersPage() {
 
