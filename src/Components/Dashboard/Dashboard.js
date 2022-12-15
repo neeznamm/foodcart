@@ -15,6 +15,7 @@ import { mainListItems } from './listItems';
 import { Outlet } from 'react-router-dom';
 import {Collapse,Alert} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import {GiKnifeFork} from 'react-icons/gi'
 
 const drawerWidth = 240;
 
@@ -100,9 +101,9 @@ const Dashboard = () => {
                 variant="h6"
                 color="inherit"
                 noWrap
-                sx={{ flexGrow: 1 }}
+                sx={{ flexGrow: 1, fontWeight: 7, fontSize: '2rem', textAlign: 'end', fontFamily: "cursive" }}
               >
-                foodcart
+              <GiKnifeFork />  foodcart
               </Typography>
   
             </Toolbar>
