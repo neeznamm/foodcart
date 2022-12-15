@@ -4,7 +4,7 @@ import Dashboard from './Components/Dashboard/Dashboard'
 import Offers from './Pages/Offers';
 import OrdersPage from './Menu/OrdersPage';
 import About from './Pages/About';
-import Menu from './Pages/Menu'
+import Menu from './Pages/Menu';
 
 function App() {
 
