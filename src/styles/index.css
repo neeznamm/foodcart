@@ -77,3 +77,13 @@ body {
   font-size: 3rem;
 }
 
+.total-sum-amout {
+  width: 100%;
+  text-align: end;
+  margin-top: 1rem;
+}
+
+.sidebar-menu-link {
+  text-decoration: none;
+  color: inherit;
+}

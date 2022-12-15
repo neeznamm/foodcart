@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 export const mainListItems = (
   <React.Fragment>
-      <Link to={'/'}>
+      <Link to={'/'} className='sidebar-menu-link'>
           <ListItemButton >
               <ListItemIcon>
                   <DashboardIcon/>
@@ -17,7 +17,7 @@ export const mainListItems = (
               <ListItemText primary="Home" />
           </ListItemButton>
       </Link>
-      <Link to={'/offers'}>
+      <Link to={'/offers'} className='sidebar-menu-link'>
       <ListItemButton >
           <ListItemIcon>
               <FastfoodIcon/>
@@ -25,7 +25,7 @@ export const mainListItems = (
           <ListItemText primary="Offers" />
       </ListItemButton>
       </Link>
-      <Link to={'/cart'}>
+      <Link to={'/cart'} className='sidebar-menu-link'>
           <ListItemButton >
               <ListItemIcon>
                   <ShoppingCartIcon/>

@@ -20,6 +20,10 @@ import CartContext from 'src/context/CartContext';
 
 function OrdersPage() {
 
+  const data = useContext(CartContext)
+  const [cartData,setCartData] = useState(data)
+
+
   const [message, setMessage] = useState(false)
   const [open, setOpen] = useState(false);
 
@@ -34,38 +38,18 @@ function OrdersPage() {
   const successMessage = () => {
     setOpen(false)
     setMessage(true)
+    setCartData([])
   }
   
-  const data = useContext(CartContext)
 
-
-  if (data.length !== 0) {
+  if (cartData.length !== 0) {
     return (
       <>
-        <Collapse in={message}>
-          <Alert
-            action={
-              <IconButton
-                aria-label="close"
-                color="inherit"
-                size="small"
-                onClick={() => {
-                  setMessage(false);
-                }}
-              >
-                <CloseIcon fontSize="inherit" />
-              </IconButton>
-            }
-            sx={{ mb: 2 }}
-          >
-            Вашата нарачка е успешно порачана и ќе пристигне насскоро
-          </Alert>
-        </Collapse>
         <Grid container spacing={3} sx={{
           marginTop: "5rem"
         }}>
           <Grid xs={1} />
-          <Orderlist data={data}/>
+          <Orderlist data={cartData}/>
           <Grid xs={2} />
           <OrderForm handleOpen={handleClickOpen} />
           <Grid xs={1} />
@@ -91,7 +75,7 @@ function OrdersPage() {
       </>
     )
   } else {
-    return <EmptyCard />
+    return <EmptyCard message={message} setMessage={setMessage}/>
   }
 
 }
