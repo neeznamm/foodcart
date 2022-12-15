@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { Routes,Route } from 'react-router-dom';
-import Dashboard from './components/Dashboard/Dashboard'
+import Dashboard from './Components/Dashboard/Dashboard'
 import Offers from './Pages/Offers';
 import OrdersPage from './Menu/OrdersPage';
 import About from './Pages/About';

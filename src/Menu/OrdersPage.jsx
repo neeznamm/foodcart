@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import OrderForm from '../components/OrderForm'
-import Orderlist from 'src/components/OrderList'
+import OrderForm from '../Components/OrderForm'
+import Orderlist from '../Components/OrderList'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -15,7 +15,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import EmptyCard from 'src/components/Dashboard/EmptyCard';
+import EmptyCard from '../Components/Dashboard/EmptyCard';
 
 function OrdersPage() {
 
