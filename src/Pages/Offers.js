@@ -18,7 +18,7 @@ const OfferCard = (props) => {
   const [hovered, setHovered] = useState(false);
 
   return <Grid item xs={2} sm={3} md={4} key={r.index}>
-    <div className="positioner" style={{position:"relative"}}>
+    <div className="positioner" style={{position:"relative", height:"100%"}}>
     <Card onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}
           variant="outlined" sx={{
             filter: hovered ? "blur(8px)" : null,

@@ -2,7 +2,6 @@ import { useLocation } from "react-router-dom";
 import React, { useEffect, useState, useNavigate } from "react";
 import { Grid, Pagination } from "@mui/material";
 import CardComponent from "../Components/CardComponent";
-import { MEALS } from "src/data/meals";
 import axios from "axios";
 import { getRandomCategoryImg } from "src/data/images";
 
@@ -15,8 +14,7 @@ const Menu = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pagesFetched, setPagesFetched] = useState([]);
   const [pageIdxsFetched, setPageIdxsFetched] = useState([]);
-  //const navigate = useNavigate();
- console.log ("lokacija", location)
+
   useEffect(() => {
     const fetchProducts = async () => {
       setProductsLoading(true);
