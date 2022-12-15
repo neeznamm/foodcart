@@ -1,7 +1,6 @@
 import { createContext} from "react";
 
-const CartContext = createContext([
-])
+const CartContext = createContext([])
 
 export const CartProvider = ({children}) => {
 
