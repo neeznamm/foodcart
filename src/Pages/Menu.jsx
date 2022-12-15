@@ -44,7 +44,7 @@ const Menu = () => {
         {productsLoading ? (
           <div>Loading...</div>
         ) : (
-          products.map(({ name, description, price, category, index }) => (
+          products.map(({ name, description, price, category, index}) => (
             <Grid item key={index}>
               <CardComponent
                 name={name}

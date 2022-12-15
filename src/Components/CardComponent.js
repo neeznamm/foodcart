@@ -74,6 +74,6 @@ const RecipeReviewCard = ({
 
 export default RecipeReviewCard;
 
-RecipeReviewCard.defaultProps = {
-  restaurantName: "Restaurant Name",
-};
+// RecipeReviewCard.defaultProps = {
+//  // restaurantName: "Restaurant Name",
+// };
