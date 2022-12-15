@@ -11,4 +11,4 @@ Start JSON Server from directory main directory (`foodcart/`):
 (npx) json-server --watch ./src/data/db.json --port 3001
 ```
 
-`npm install react-icons --save`
+react icons `npm install react-icons --save`
