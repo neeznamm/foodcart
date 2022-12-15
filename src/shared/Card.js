@@ -26,6 +26,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+
 export default function RecipeReviewCard({name,text,price}) {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -55,6 +56,7 @@ export default function RecipeReviewCard({name,text,price}) {
         image="/static/images/cards/paella.jpg"
         alt={name}
       />
+      {}
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           {text}
