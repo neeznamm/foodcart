@@ -9,7 +9,7 @@ const style = {
   fontSize: "3rem"
 }
 
-export default function EmptyCard({ message, setMessage }) {
+export default function EmptyCart({ message, setMessage }) {
   return (
     <>
       <Collapse in={message}>
@@ -32,8 +32,8 @@ export default function EmptyCard({ message, setMessage }) {
         </Alert>
       </Collapse>
       <div className='empty-card-container'>
-        <h1 className='empty-card-title'>Empty Card</h1>
-        <HiShoppingCart size={120} />
+        <h1 className='empty-cart-title'>Your cart is empty!</h1>
+        <HiShoppingCart size={120} opacity={0.3}/>
       </div>
     </>
   )

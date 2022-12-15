@@ -1,8 +1,7 @@
-import {useState} from 'react'
 import { Routes,Route } from 'react-router-dom';
 import Dashboard from './Components/Dashboard/Dashboard'
 import Offers from './Pages/Offers';
-import OrdersPage from './Pages/OrdersPage'
+import Orders from './Pages/Orders'
 import About from './Pages/About';
 import Menu from './Pages/Menu';
 
@@ -13,7 +12,7 @@ function App() {
       <Routes>
             <Route path="/" element={<Dashboard />}>
             <Route path="/offers" element={<Offers/>} />
-            <Route path="/cart" element={<OrdersPage /> } />
+            <Route path="/cart" element={<Orders /> } />
             <Route path="/about" element={<About/>} />
             <Route path="/menu" element={<Menu/>} />
           </Route>

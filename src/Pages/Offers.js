@@ -9,8 +9,9 @@ import {useNavigate} from "react-router-dom";
 import {customTheme} from "../shared/Theme";
 import {ThemeProvider} from "@mui/material/styles";
 import {ArrowBack, ArrowForward} from "@mui/icons-material";
-import foodImages from '../shared/ImageGetter.js'
+import {restaurantImages} from '../shared/ImageGetter.js'
 import Box from "@mui/material/Box";
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 const OfferCard = (props) => {
   const {r} = props;
@@ -22,19 +23,19 @@ const OfferCard = (props) => {
     <Card onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}
           variant="outlined" sx={{
             filter: hovered ? "blur(8px)" : null,
-            boxShadow:'5px 5px 30px #8888', backgroundImage:`linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
-          url(${foodImages[(r.tags.length+r.name.length)%17]})`,
+            cursor: hovered ? "default" : "auto", 
+            boxShadow:'5px 5px 30px #8888', backgroundImage:`linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), 
+          url(${restaurantImages[(r.tags.length+r.name.length)%17]})`,
       maxHeight:"260px", height:"100%",':hover': {boxShadow: 20}}}>
       <CardContent>
-        {/*{renderDollarIcon (r.price_range.length)}*/}
-        <Box component="div" sx={{ p: 1, backgroundColor:"rgba(255,255,255,0.85)", height:"fit-content", width:"fit-content", mb:2, borderRadius:"8px" }}>
-          <Typography variant="h5" component="div">
+        <Box component="div" sx={{ p: 1, backgroundColor:"rgba(255,255,255,0.8)", height:"fit-content", width:"fit-content", mb:2, borderRadius:"8px" }}>
+          <Typography variant="h5" component="div" sx={{textAlign:"left"}}>
             {r.name}
           </Typography>
         </Box>
         <div style={{height:"130px", float:"left"}}>
-          {r.tags.split(',').slice(0,6).map(t => <Chip component="span" key={t} label={t} sx={{m: 0.3, opacity:"0.9", fontStyle:"italic"}} color={t.length % 2 === 0 ? "primary" :
-              t.length % 13 === 0 ? "warning" : "success"}/>)}
+          {r.tags.split(',').slice(0,6).map(t => <Chip component="span" key={t} label={t} sx={{m: 0.3, fontWeight:"bold", 
+          opacity:t.length % 3 === 0 ? "0.7" : t.length % 2 === 0 ? "0.8" : "0.9", fontStyle:"italic", backgroundColor:"black", color:"white"}}/>)}
         </div>
       </CardContent>
       <CardActions>
@@ -43,14 +44,16 @@ const OfferCard = (props) => {
         <Button variant="contained"><Rating size="small" name="read-only" value={r.score} readOnly /></Button>
       </CardActions>
     </Card>
-      <Button sx={{position: "absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", zIndex:hovered ? "100" : "-100"}}
+      <Button color="error" size="large" endIcon={<MenuBookIcon/>} sx={{position: "absolute", top:"50%", left:"50%", 
+                    transform:"translate(-50%,-50%)", zIndex:hovered ? "100" : "-100", fontWeight:"bold",
+                    textTransform: "none", fontSize:"1.2rem"}}
               variant="contained"
               onClick={() => {
                 navigate('/menu', {state: r})
               }
               }
               onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}
-      >VIEW MENU
+      >View their menu
       </Button>
     </div>
   </Grid>
@@ -58,7 +61,7 @@ const OfferCard = (props) => {
 
 const Offers = () => {
   const [restaurants, setRestaurants] = useState([]);
-  const [loadedRestaurants, setLoadedRestaurants] = useState(false);
+  const [, setLoadedRestaurants] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [pagesFetched, setPagesFetched] = useState([]);
   const [pageIdxsFetched, setPageIdxsFetched] = useState([]);

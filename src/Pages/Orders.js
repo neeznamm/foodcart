@@ -7,12 +7,11 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import EmptyCard from 'src/Components/Dashboard/EmptyCard';
-import CartContext from 'src/context/CartContext';
+import EmptyCart from '../Components/Dashboard/EmptyCart';
+import CartContext from '../context/CartContext';
 
 
-function OrdersPage() {
+function Orders() {
 
   const data = useContext(CartContext)
   const [cartData,setCartData] = useState(data)
@@ -69,9 +68,9 @@ function OrdersPage() {
       </>
     )
   } else {
-    return <EmptyCard message={message} setMessage={setMessage}/>
+    return <EmptyCart message={message} setMessage={setMessage}/>
   }
 
 }
 
-export default OrdersPage
+export default Orders

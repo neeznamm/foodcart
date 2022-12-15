@@ -1,5 +1,4 @@
 import React from "react";
-import { styled } from "@mui/material/styles";
 import {
   Card,
   CardActions,
@@ -7,17 +6,12 @@ import {
   CardHeader,
   Grid,
 } from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Typography,
-  IconButton,
-  Collapse,
   Rating,
   Button,
 } from "@mui/material";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-import { getRandomCathegoryImg } from "src/data/images";
 
 const RecipeReviewCard = ({
   name,
@@ -73,7 +67,3 @@ const RecipeReviewCard = ({
 };
 
 export default RecipeReviewCard;
-
-// RecipeReviewCard.defaultProps = {
-//  // restaurantName: "Restaurant Name",
-// };

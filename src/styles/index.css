@@ -72,8 +72,9 @@ body {
   margin-top: 10rem;
 }
 
-.empty-card-title {
+.empty-cart-title {
   font-size: 3rem;
+  opacity: 0.3;
 }
 
 .total-sum-amout {
