@@ -69,4 +69,21 @@ body {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+.empty-card-container {
+  margin-top: 10rem;
+}
 
+.empty-card-title {
+  font-size: 3rem;
+}
+
+.total-sum-amout {
+  width: 100%;
+  text-align: end;
+  margin-top: 1rem;
+}
+
+.sidebar-menu-link {
+  text-decoration: none;
+  color: inherit;
+}
