@@ -41,7 +41,8 @@ const OfferCard = (props) => {
       <CardActions>
       </CardActions>
       <CardActions sx={{position:"absolute", bottom:"10px", right:"10px", opacity:"0.9"}} >
-        <Button variant="contained"><Rating size="small" name="read-only" value={r.score} readOnly /></Button>
+        <Button color="error" variant="contained"><Rating size="small" name="read-only" value={r.score} readOnly
+        /></Button>
       </CardActions>
     </Card>
       <Button color="error" size="large" endIcon={<MenuBookIcon/>} sx={{position: "absolute", top:"50%", left:"50%", 
@@ -85,7 +86,7 @@ const Offers = () => {
         <div style={{margin:"15px 60px 60px 60px"}}>
         <Typography variant="h4" sx={{mt:1.5, mb:2, float:"left"}}>
           Choose a <b>restaurant</b> to order from</Typography>
-          <Pagination color="primary" count={10} page={currentPage} onChange={(event,page)=>setCurrentPage(page)}
+          <Pagination color="error" count={10} page={currentPage} onChange={(event,page)=>setCurrentPage(page)}
                       size="large" sx={{mt:1.5, ml:5, float:"right"}} slots={{ previous: <ArrowBack/>, next: <ArrowForward/> }}/>
 
     <Grid container spacing={{ xs: 2, md: 5 }} columns={{ xs: 4, sm: 8, md: 12 }}>

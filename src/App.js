@@ -7,6 +7,7 @@ import About from './Pages/About';
 import Menu from './Pages/Menu';
 import CartContext from "./context/CartContext";
 import {useMemo, useState} from "react";
+import Home from "./Pages/Home"
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
     <div className='app-container'>
       <Routes>
             <Route path="/" element={<Dashboard />}>
+                <Route path="/" element={<Home/>} />
             <Route path= "/offers" element={<Offers/>} />
             <Route path="/cart" element={<Orders /> } />
             <Route path="/about" element={<About/>} />

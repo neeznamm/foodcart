@@ -55,8 +55,8 @@ body {
 
 .card {
   background: #fff;
-  border-radius: 2px;
   display: inline-block;
+  border-radius: 2px;
   height: 300px;
   margin: 1rem;
   position: relative;
@@ -77,7 +77,7 @@ body {
   opacity: 0.3;
 }
 
-.total-sum-amout {
+.total-sum-amount {
   width: 100%;
   text-align: end;
   margin-top: 1rem;
@@ -86,4 +86,9 @@ body {
 .sidebar-menu-link {
   text-decoration: none;
   color: inherit;
+}
+
+.home-link {
+  text-decoration: none;
+  color: #fff;
 }
