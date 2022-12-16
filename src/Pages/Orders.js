@@ -13,10 +13,7 @@ import CartContext from '../context/CartContext';
 
 function Orders() {
 
-  const data = useContext(CartContext)
-  const [cartData,setCartData] = useState(data)
-
-
+  const {cart, setCart} = useContext(CartContext)
   const [message, setMessage] = useState(false)
   const [open, setOpen] = useState(false);
 
@@ -31,18 +28,18 @@ function Orders() {
   const successMessage = () => {
     setOpen(false)
     setMessage(true)
-    setCartData([])
+    setCart([])
   }
-  
 
-  if (cartData.length !== 0) {
+
+  if (cart.length > 0) {
     return (
       <>
         <Grid container spacing={3} sx={{
           marginTop: "5rem"
         }}>
           <Grid xs={1} />
-          <Orderlist data={cartData}/>
+          <Orderlist data={cart}/>
           <Grid xs={2} />
           <OrderForm handleOpen={handleClickOpen} />
           <Grid xs={1} />
@@ -70,7 +67,5 @@ function Orders() {
   } else {
     return <EmptyCart message={message} setMessage={setMessage}/>
   }
-
 }
-
 export default Orders

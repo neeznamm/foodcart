@@ -1,16 +1,17 @@
 import { useLocation } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { Grid, Pagination, Card, CardContent, Box , Button, Typography, CardActions, ThemeProvider, CircularProgress } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import { customTheme } from "src/shared/Theme";
 import axios from "axios";
 import {burgerImages, beverageImages, soupImages, saladImages, pizzaImages, iceCreamImages, wrapImages} from '../shared/ImageGetter'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import CartContext from "../context/CartContext";
 
 const getRandomImg = (product, category) => {
   const randomIndex = (product.index+product.name.length)%6;
-  console.log(randomIndex)
-  switch(category) {
+    // eslint-disable-next-line default-case
+  switch (category) {
       case "Burger":
         return burgerImages[randomIndex];
       case "Beverage":
@@ -31,6 +32,13 @@ const getRandomImg = (product, category) => {
 const MenuCard = (props) => {
   const {product} = props;
   const [hovered, setHovered] = useState(false);
+  const {cart, setCart} = useContext(CartContext);
+
+  const handleAddToCart = (product) => {
+      setCart(
+          [...cart, product]
+      )
+  }
 
   return <Grid item xs={2} sm={2} md={3} key={product.index}>
     <div className="positioner" style={{position:"relative", height:"100%"}}>
@@ -62,8 +70,7 @@ const MenuCard = (props) => {
                     transform:"translate(-50%,-50%)", zIndex:hovered ? "100" : "-100", fontWeight:"bold",
                     textTransform: "none", fontSize:"1.2rem"}}
               variant="contained"
-              onClick={() => {} //TODOOOOOOOOOOOOOO
-              }
+              onClick={() => handleAddToCart(product)}
               onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}
       >Add to cart
       </Button>
