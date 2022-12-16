@@ -52,13 +52,13 @@ function Orders() {
         >
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              Дали сакате да ја потврдите вашата нарачка
+             Would you like to confirm your order
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Откажи</Button>
+            <Button onClick={handleClose}>Cancel</Button>
             <Button onClick={successMessage} autoFocus>
-              Потврди
+              Confirm
             </Button>
           </DialogActions>
         </Dialog>

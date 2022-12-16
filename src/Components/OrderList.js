@@ -8,15 +8,21 @@ import TableRow from '@mui/material/TableRow';
 import Title from '../shared/Title';
 
 
-export default function Orders({data}) {
+export default function Orders({ data }) {
+
+  const allPrices = data.map(elm => {
+    parseFloat(elm.price.replace(" USD", " ")).toFixed(2)
+    const prices = +elm.price.replace(" USD", " ")
+    return +prices.toFixed(2)
+  })
 
   return (
     <Grid xs={4}>
       {data.length === 1 && (
-      <Title>Your Order</Title>
+        <Title>Your Order</Title>
       )}
       {data.length > 1 && (
-      <Title>Your Orders</Title>
+        <Title>Your Orders</Title>
       )}
       <Table size="small">
         <TableHead>
@@ -28,18 +34,22 @@ export default function Orders({data}) {
           </TableRow>
         </TableHead>
         <TableBody>
-            <TableRow key="data.id">
-              <TableCell>data.id</TableCell>
-              <TableCell> data.name
-            </TableCell>
-              <TableCell>data.category</TableCell>
-              <TableCell align="right">data.price</TableCell>
+          {data && data.map(elm => (
+            <TableRow key="data.i">
+              <TableCell>{elm.index}</TableCell>
+              <TableCell> {elm.name}
+              </TableCell>
+              <TableCell>{elm.category}</TableCell>
+              <TableCell align="right">{elm.price}</TableCell>
             </TableRow>
+          ))}
         </TableBody>
       </Table>
       <div className='total-sum-amout'>
-          {/* <p>{data.reduce((acc,sum) => acc + sum)}</p> */}
-           <Title>Checkout: 70.99</Title>
+        <Title>Your Total Is ${allPrices.reduce(
+          (a, b) => a + b,
+          0
+        )}</Title>
       </div>
     </Grid>
   );

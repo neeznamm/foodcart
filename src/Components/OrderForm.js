@@ -61,15 +61,6 @@ export default function OrderForm({handleOpen}) {
             </Grid>
             <Grid item xs={12}>
                 <TextField
-                    id="state"
-                    name="state"
-                    label="State/Province/Region"
-                    fullWidth
-                    variant="standard"
-                />
-            </Grid>
-            <Grid item xs={12}>
-                <TextField
                     required
                     id="zip"
                     name="zip"
@@ -79,23 +70,12 @@ export default function OrderForm({handleOpen}) {
                     variant="standard"
                 />
             </Grid>
-            <Grid item xs={12}>
-                <TextField
-                    required
-                    id="country"
-                    name="country"
-                    label="Country"
-                    fullWidth
-                    autoComplete="shipping country"
-                    variant="standard"
-                />
-            </Grid>
             <Grid item xs={12} sx={{
                 margin: "1rem 0"
             }}>
             </Grid>
             <div style={{ textAlign: "end", width: "100%", margin: "0 3rem 0 0" }}>
-                <Button variant="contained" onClick={handleOpen}>Нарачај</Button>
+                <Button variant="contained" onClick={handleOpen}>Order</Button>
             </div>
         </Grid>
     );

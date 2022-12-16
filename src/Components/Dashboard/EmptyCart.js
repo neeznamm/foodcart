@@ -28,7 +28,7 @@ export default function EmptyCart({ message, setMessage }) {
           }
           sx={{ mb: 2 }}
         >
-          Вашата нарачка е успешно порачана и ќе пристигне насскоро
+         Thank's for ordering, your food will arive shortly
         </Alert>
       </Collapse>
       <div className='empty-card-container'>
