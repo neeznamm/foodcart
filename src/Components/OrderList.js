@@ -45,17 +45,11 @@ export default function Orders({ data }) {
           ))}
         </TableBody>
       </Table>
-<<<<<<< Updated upstream
       <div className='total-sum-amout'>
         <Title>Your Total Is ${allPrices.reduce(
           (a, b) => a + b,
           0
         )}</Title>
-=======
-      <div className='total-sum-amount'>
-          {/* <p>{data.reduce((acc,sum) => acc + sum)}</p> */}
-           <Title>Вкупна Цена: 70.99</Title>
->>>>>>> Stashed changes
       </div>
     </Grid>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
 import {Button, Chip, CircularProgress, Grid, Pagination, Rating} from "@mui/material";
@@ -47,14 +47,14 @@ const OfferCard = (props) => {
     </Card>
       <Button color="error" size="large" endIcon={<MenuBookIcon/>} sx={{position: "absolute", top:"50%", left:"50%", 
                     transform:"translate(-50%,-50%)", zIndex:hovered ? "100" : "-100", fontWeight:"bold",
-                    textTransform: "none", fontSize:"1.2rem"}}
+                    textTransform: "none", fontSize:"1.1rem"}}
               variant="contained"
               onClick={() => {
                 navigate('/menu', {state: r})
               }
               }
               onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}
-      >View their menu
+      ><Typography variant="h6" sx={{fontWeight:"normal"}}>View menu</Typography>
       </Button>
     </div>
   </Grid>

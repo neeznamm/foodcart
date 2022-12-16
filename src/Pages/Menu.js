@@ -87,7 +87,7 @@ const MenuCard = (props) => {
             <span style={{fontWeight:"bold"}}>Description: </span>{product.description.slice(0,200)}{product.description.length>200 && <span style={{fontWeight:"bold"}}> ...</span>}
         </Typography>
         </Box>
-        <Box component="div" sx={{ p: 1, backgroundColor:"cornsilk", height:"fit-content", width:"fit-content", mb:2, borderRadius:"8px",
+        <Box component="div" sx={{ p: 1, opacity:"0.8", backgroundColor:"white", height:"fit-content", width:"fit-content", mb:2, borderRadius:"8px",
             position:"absolute", left:"130px", top:"280px", fontWeight:"bold" }}>
             <Typography variant="h6">{product.price}</Typography>
         </Box>
@@ -98,7 +98,7 @@ const MenuCard = (props) => {
               variant="contained"
               onClick={() => handleAddToCart(product)}
               onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}
-      >Add to cart
+      ><Typography variant="h6" sx={{fontWeight:"normal"}}>Add to cart</Typography>
       </Button>
     </div>
   </Grid>

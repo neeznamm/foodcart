@@ -2,6 +2,7 @@ import * as React from "react";
 import { Button, Typography } from "@mui/material";
 import ProductHeroLayout from "./ProductHeroLayout";
 import { Link } from "react-router-dom";
+import { GiKnifeFork } from "react-icons/gi";
 
 const backgroundImage =
     "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=600";
@@ -22,7 +23,7 @@ export default function ProductHero() {
                 alt="increase priority"
             />
             <Typography color="inherit" align="center" variant="h2" marked="center"  sx={{fontFamily: "cursive"}}>
-                FoodCart
+                <GiKnifeFork/>{" "}FoodCart
             </Typography>
             <Typography
                 color="inherit"
