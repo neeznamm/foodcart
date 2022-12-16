@@ -13,32 +13,33 @@ export default function Orders({data}) {
   return (
     <Grid xs={4}>
       {data.length === 1 && (
-      <Title>Вашата Нарачка</Title>
+      <Title>Your Order</Title>
       )}
       {data.length > 1 && (
-      <Title>Вашите Нарачки</Title>
+      <Title>Your Orders</Title>
       )}
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Број</TableCell>
-            <TableCell>Адреса</TableCell>
-            <TableCell>Нарачка</TableCell>
-            <TableCell align="right">Цена</TableCell>
+            <TableCell>Number</TableCell>
+            <TableCell>Restaurants</TableCell>
+            <TableCell>Order</TableCell>
+            <TableCell align="right">Price</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-            <TableRow key="110">
-              <TableCell>110</TableCell>
-              <TableCell>Партизанска</TableCell>
-              <TableCell>Хамбургер</TableCell>
-              <TableCell align="right">15.99</TableCell>
+            <TableRow key="data.id">
+              <TableCell>data.id</TableCell>
+              <TableCell> data.name
+            </TableCell>
+              <TableCell>data.category</TableCell>
+              <TableCell align="right">data.price</TableCell>
             </TableRow>
         </TableBody>
       </Table>
       <div className='total-sum-amout'>
           {/* <p>{data.reduce((acc,sum) => acc + sum)}</p> */}
-           <Title>Вкупна Цена: 70.99</Title>
+           <Title>Checkout: 70.99</Title>
       </div>
     </Grid>
   );

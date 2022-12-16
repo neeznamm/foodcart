@@ -1,5 +1,6 @@
 import { Routes,Route } from 'react-router-dom';
 import Dashboard from './Components/Dashboard/Dashboard'
+import ErrorPage from './ErrorPage';
 import Offers from './Pages/Offers';
 import Orders from './Pages/Orders'
 import About from './Pages/About';
@@ -22,6 +23,7 @@ function App() {
             <Route path="/cart" element={<Orders /> } />
             <Route path="/about" element={<About/>} />
             <Route path="/menu" element={<Menu/>} />
+            <Route path="/*" element={<ErrorPage/>} />
           </Route>
       </Routes>
     </div>
